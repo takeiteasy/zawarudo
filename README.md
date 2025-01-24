@@ -1,17 +1,14 @@
-# zawarudo
+# secs
 
 > [!WARNING]
 > Work in progress
 
 Pure C entity component system using sparse arrays for component storage
 
-> [!NOTE]
-> yes its a jojo reference
-
 ## LICENSE
 
 ```
-Pure C entity component system
+Simple Entity Component System
 
 Copyright (C) 2024 George Watson
 

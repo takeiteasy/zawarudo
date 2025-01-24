@@ -1,5 +1,5 @@
 /*
-    zawarudo.h -- https://github.com/takeiteasy/zawarudo
+    secs.h -- https://github.com/takeiteasy/secs
      
     Copyright (C) 2024 George Watson
 
@@ -17,25 +17,25 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#ifndef ZAWARUDO_HEAD
-#define ZAWARUDO_HEAD
+#ifndef SECS_HEAD
+#define SECS_HEAD
 #ifdef __cplusplus
 extern "C" {
 #endif
 #include <stdint.h>
 #include <stddef.h>
 
-#ifdef ZAWARUDO_ENABLE_BLOCKS
+#ifdef SECS_ENABLE_BLOCKS
 #ifndef BLOCKS
 #error "This platform doesn't support BLOCKS"
 #endif
 #endif
 
 #if defined(_WIN32) || defined(_WIN64)
-#define ZAWARUDO_ON_WINDOWS
+#define SECS_ON_WINDOWS
 #endif
 
-#if defined(ZAWARUDO_ON_WINDOWS) && !defined(ZAWARUDO_NO_EXPORT)
+#if defined(SECS_ON_WINDOWS) && !defined(SECS_NO_EXPORT)
 #define EXPORT __declspec(dllexport)
 #else
 #define EXPORT
@@ -55,8 +55,7 @@ extern const uint64_t ecs_nil;
 extern const entity_t ecs_nil_entity;
 
 typedef struct world world_t;
-typedef world_t zawarudo_t;
-#ifdef ZAWARUDO_ENABLE_BLOCKS
+#ifdef SECS_ENABLE_BLOCKS
 typedef void(^system_t)(entity_t);
 typedef int(^filter_system_t)(entity_t);
 #else
@@ -95,9 +94,9 @@ EXPORT void ecs_query(world_t *world, system_t fn, filter_system_t filter, int c
 #ifdef __cplusplus
 }
 #endif
-#endif // ZAWARUDO_HEAD
+#endif // SECS_HEAD
 
-#ifdef ZAWARUDO_IMPLEMENTATION
+#ifdef SECS_IMPLEMENTATION
 #include <stdlib.h>
 #include <stdarg.h>
 #include <string.h>

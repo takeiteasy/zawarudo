@@ -5,11 +5,11 @@
 //  Created by George Watson on 19/11/2022.
 //
 
-#ifndef test_h
-#define test_h
+#ifndef secs_test_h
+#define secs_test_h
 #include <stdio.h>
-#define ZAWARUDO_IMPLEMENTATION
-#include "zawarudo.h"
+#define SECS_IMPLEMENTATION
+#include "secs.h"
 #if defined(_MSC_VER) || (defined(__STDC__) && __STDC_VERSION__ < 199901L)
 typedef enum bool { false = 0, true = !false } bool;
 #else
@@ -40,4 +40,4 @@ static int test_success = 0;
 } while(0)
 
 
-#endif /* test_h */
+#endif /* secs_test_h */
